@@ -1,20 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="login-container">
+      <hr/>
+      <h1>Login</h1>
+      <ion-input placeholder="Email" style="--background: rgba(255, 242, 242, 0.4); --color: #777777;" type="email"
+        inputmode="email"></ion-input>
+      <ion-input placeholder="Senha" style="--background: rgba(255, 242, 242, 0.4); --color: #777777;" type="password">
+        <ion-icon class="eye-password" size="small" name="eye-outline"></ion-icon>
+      </ion-input>
+      <p class="forgot-password">Esqueceu sua senha?</p>
+      <div class="button-container">
+        <ion-button expand="full" shape="round" strong="true" color="danger">Entrar</ion-button>
+      </div>
+      <p class="new-here">Novo por aqui? <span style="color: #F91550;">Registre-se</span></p>
+    </div>
   </div>
 </ion-content>

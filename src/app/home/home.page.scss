@@ -1,27 +1,89 @@
 #container {
-  text-align: center;
+  background-image: url('/assets/loginbackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+}
 
+#container .login-container {
   position: absolute;
-  left: 0;
-  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 25px 25px 0px 0px;
+}
+
+#container .login-container hr {
+  background: #E7E7E7;
+  border-radius: 50px;
+  height: 5px;
+  width: 35%;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#container .login-container h1 {
+  text-align: center;
+  color: #F91550;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+#container ion-input {
+  border: 1px solid rgba(61, 61, 61, 0.3);
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 3px 15px!important;
+  margin-bottom: 10px!important;
+  color: #777777;
+  position: relative;
+}
+
+#container .eye-password {
+  position: absolute;
   top: 50%;
+  right: 15px;
   transform: translateY(-50%);
+  color: rgba(249, 21, 80, 0.5);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+#container .forgot-password {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #a1a1a1;
+  text-align: right;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+#container .button-container {
+  width: 100%;
+  max-width: 65%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-#container a {
-  text-decoration: none;
+#container .new-here {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #3D3D3D;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 0!important;
 }
+
