@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'preferencias',
     loadChildren: () => import('./preferencias/preferencias.module').then( m => m.PreferenciasPageModule)
   },
+  {
+    path: 'registrar',
+    loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule)
+  },
 ];
 
 @NgModule({

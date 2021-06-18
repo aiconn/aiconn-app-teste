@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registrar</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div class="login-container">
+      <div class="logo-container">
+        <img class="logo" src="/assets/logo.png" />
+      </div>
+      <h1>Registrar</h1>
+      <p class="subtitle">Crie sua conta preenchendo os campos a seguir.</p>
 
-<ion-content>
+        <ion-input placeholder="Email" type="email"
+          inputmode="email"></ion-input>
 
+        <ion-input placeholder="Nome de usuário" type="text"></ion-input>
+
+        <ion-input class="password-input" style="--margin-right: 35px;" placeholder="Senha" [type]="showPassword ? 'text' : 'password'" clearOnEdit="false" >
+            <ion-icon (click)="togglePassword()" class="eye-password" size="small" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-input>
+
+      <div class="button-container">
+        <ion-button [routerLink]="['/preferencias']" expand="full" shape="round" strong="true" color="danger">Prosseguir</ion-button>
+      </div>
+    </div>
+    <p class="have-account">Já tem uma conta? <span style="color: #F91550; outline: none;" [routerLink]="['/home']" >Logue-se</span></p>
+  </div>
 </ion-content>
