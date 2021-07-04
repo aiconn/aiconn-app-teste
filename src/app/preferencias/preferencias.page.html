@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>preferencias</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div id="container">
+    <header>
+      <div class="logo-container">
+        <img class="logo" src="/assets/logo.png" />
+      </div>
+      <h1 class="title">Preferências</h1>
+      <p class="subtitle">Escolha ao menos 3 assuntos de seu interesse para moldar seu perfil de conteúdo.</p>
+    </header>
 
+    <ion-grid style="padding: 0!important;">
+      <ion-row>
+        <ion-col *ngFor="let topic of topics" (click)="selectTopic(topic)" size="{{ topic.size }}" style="padding-left: 0!important; padding-right: 0!important;">
+          <ion-button [ngClass]="{'active': topic.active}" class="subject-button" expand="full" shape="round">{{ topic.name }}</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="button-container">
+      <ion-button disabled="{{ selectedTopics >= 3 ? false : true }}" type="submit" [routerLink]="['/inicio']" expand="full" strong="true" color="danger">Finalizar</ion-button>
+    </div>
+  </div>
 </ion-content>
