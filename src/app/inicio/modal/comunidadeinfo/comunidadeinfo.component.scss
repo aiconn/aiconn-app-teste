@@ -1,0 +1,90 @@
+.modal-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container .modal-box {
+  width: 85%;
+  padding: 20px;
+  background: #091021;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25), -10px -10px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #50c8ff1f;
+  position: relative;
+}
+
+.community-img {
+  margin-top: -50px;
+  border-radius: 15px;
+}
+
+.community-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+
+  text-align: center;
+
+  color: #FE7A9C;
+}
+
+.community-desc {
+  color: #D5D5D5;
+  font-family: Roboto;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.community-desc span {
+  font-weight: bold;
+  color: white;
+}
+
+.post-stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  gap: 5px 6px;
+}
+
+.post-stats-container li {
+  display: flex;
+  align-items: center;
+  border: 1px solid #fe7a9c5c;
+  border-radius: 15px;
+  padding: 3px 10px;
+  background-color: #eb445a52;
+  box-shadow: 0px 0px 10px #1563ff24;
+}
+
+.post-stats-container li span {
+  color: #f5f5f5;
+  font-size: 13px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f91550;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0px 0px 15px #1563ff4b;
+}
+
+.close-modal img {
+    width: 25px;
+    height: 25px;
+}

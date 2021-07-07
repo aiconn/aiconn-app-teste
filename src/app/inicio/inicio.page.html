@@ -1,9 +1,106 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content scroll="false">
+  <div id="container">
+    <ion-grid class="welcome-container">
+      <ion-row>
+        <ion-col style="padding: 0px;">
+          <p class="welcome">Bem vindo</p>
+          <p class="username">leoctotti</p>
+        </ion-col>
+        <ion-col size="4" class="user-col" style="padding: 0px;">
+          <div>
+            <img class="user-image" src="/assets/patrick.jpg" width="45px" height="45px" />
+            <span class="status"></span>
+          </div>
+      
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-<ion-content>
+    <div style="margin-top: 130px; width: 100%;"></div>
 
+    <div>
+      <ion-item lines="none" style="--background: transparent; border: 0px!important;">
+        <ion-avatar slot="start">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" width="35px" height="35px" style="width: 35px!important; height: 35px!important;" >
+        </ion-avatar>
+        <ion-label class="post-username">Usuário</ion-label>
+        <img src="/assets/icon/opcoes.svg" />
+      </ion-item>
+      <div>
+        <img class="post-image" src="https://via.placeholder.com/350" alt="" width="100%">
+      </div>
+
+      <div class="post-info">
+        <ion-grid style="padding: 0;">
+          <ion-row>
+            <ion-col size="6" style="padding: 0;">
+              <p class="community-name" (click)="showModalComunidade()">Comunidade</p>
+            </ion-col>
+            <ion-col size="6" style="padding: 0; display: flex; align-items: center; justify-content: flex-end;">
+              <ion-button style="width: 90%; height: 40px;" type="submit" expand="full" shape="round" strong="true" color="danger">Entrar</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <p class="post-text"><span class="post-user">Usuário</span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin proin sit orci, cras turpis vitae mattis non id.
+        </p>
+
+        <div class="post-footer">
+          <ion-grid style="padding: 0;">
+            <ion-row>
+              <ion-col size="8" style="padding: 0;">
+                <ul class="post-stats-container">
+                  <li (click)="showModalComunidade()">
+                    <img src="/assets/icon/comentarios.svg" alt="Comentários" />
+                    <span>259</span>
+                  </li>
+                  <li>
+                    <img src="/assets/icon/visualizacoes.svg" alt="Visualizações" />
+                    <span>2K</span>
+                  </li>
+                </ul>
+              </ion-col>
+              <ion-col size="4" style="padding: 0;">
+                <ul class="post-friends-container">
+                  <li>
+                    <img src="https://via.placeholder.com/20" />
+                  </li>
+                  <li>
+                    <img src="https://via.placeholder.com/20" />
+                  </li>
+                  <li>
+                    <img src="https://via.placeholder.com/20" />
+                  </li>
+                </ul>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </ion-content>
+
+<ion-toolbar>
+  <ion-tabs class="tabs-positive tabs-icon-top">
+    <ion-tab-bar slot="bottom" style="--background: #050b18; --border: 0px;">
+      <ion-tab-button tab="inicio" style="background: #F91550; border-top-left-radius: 30px;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/home.svg" />
+      </ion-tab-button>
+  
+      <ion-tab-button tab="comunidades" style="background: #F91550;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/feed.svg" />
+      </ion-tab-button>
+  
+      <ion-tab-button tab="chats" style="background: #F91550;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/chats.svg" />
+        <ion-badge color="dark">6</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="amigos" style="background: #F91550; border-top-right-radius: 30px;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/amigos.svg" />
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
