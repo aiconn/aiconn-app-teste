@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'registrar',
     loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule)
   },
+  {
+    path: 'comunidades',
+    loadChildren: () => import('./comunidades/comunidades.module').then( m => m.ComunidadesPageModule)
+  },
+  {
+    path: 'criarcomunidade',
+    loadChildren: () => import('./criarcomunidade/criarcomunidade.module').then( m => m.CriarcomunidadePageModule)
+  }
 ];
 
 @NgModule({
