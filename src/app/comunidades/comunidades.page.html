@@ -1,0 +1,104 @@
+<ion-content fullscreen>
+  <div id="container">
+    <div class="welcome-container">
+      <h1 class="title">Comunidades</h1>
+      <p class="subtitle">Acesse aqui alguma comunidade que você faz parte.</p>
+    </div>
+    
+    <div style="margin-top: 130px;"></div>
+
+    <div class="community-card">
+      <ion-thumbnail slot="start" style="margin-right: 10px;">
+        <img class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Comunidade</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      </ion-label>
+    </div>
+    <div class="community-card">
+      <ion-thumbnail slot="start" style="margin-right: 10px;">
+        <img class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Comunidade</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      </ion-label>
+    </div>
+    <div class="community-card">
+      <ion-thumbnail slot="start" style="margin-right: 10px;">
+        <img class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Comunidade</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      </ion-label>
+    </div>
+    <div class="community-card">
+      <ion-thumbnail slot="start" style="margin-right: 10px;">
+        <img class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Comunidade</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      </ion-label>
+    </div>
+    <div class="community-card">
+      <ion-thumbnail slot="start" style="margin-right: 10px;">
+        <img class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Comunidade</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      </ion-label>
+    </div>
+    <div class="community-card">
+      <ion-thumbnail slot="start" style="margin-right: 10px;">
+        <img class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Comunidade</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      </ion-label>
+    </div>
+    <div class="community-card">
+      <ion-thumbnail slot="start" style="margin-right: 10px;">
+        <img class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Comunidade</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+      </ion-label>
+    </div>
+
+    
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/criarcomunidade']">
+    <ion-fab-button color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs class="tabs-positive tabs-icon-top">
+    <ion-tab-bar slot="bottom" style="--background: #050b18; --border: 0px;">
+      <ion-tab-button [routerLink]="['/inicio']" routerDirection="back" style="background: #F91550; border-top-left-radius: 30px;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/home.svg" />
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/comunidades']" style="background: #F91550;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/feed.svg" />
+      </ion-tab-button>
+  
+      <ion-tab-button style="background: #F91550;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/chats.svg" />
+        <ion-badge color="dark">6</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button style="background: #F91550; border-top-right-radius: 30px;">
+        <img style="filter: drop-shadow(2px 4px 8px #081b46);" src="/assets/icon/amigos.svg" />
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
