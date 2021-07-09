@@ -6,7 +6,7 @@ import { InicioPage } from './inicio.page';
 const routes: Routes = [
   {
     path: '',
-    component: InicioPage
+    component: InicioPage,
   }
 ];
 
@@ -14,4 +14,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
+
 export class InicioPageRoutingModule {}

@@ -10,8 +10,10 @@
 
     <ion-grid style="padding: 0!important;">
       <ion-row>
-        <ion-col *ngFor="let topic of topics" (click)="selectTopic(topic)" size="{{ topic.size }}" style="padding-left: 0!important; padding-right: 0!important;">
-          <ion-button [ngClass]="{'active': topic.active}" class="subject-button" expand="full" shape="round">{{ topic.name }}</ion-button>
+        <ion-col *ngFor="let topic of topics" (click)="selectTopic(topic)" size="{{ topic.size }}" >
+          <button [ngClass]="{'active': topic.active}" class="subject-button ion-activatable" expand="full" shape="round">{{ topic.name }}
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </button>
         </ion-col>
       </ion-row>
     </ion-grid>

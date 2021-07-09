@@ -5,7 +5,11 @@ import { HomePage } from './home.page';
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
+    component: HomePage
+  },
+  {
+    path: 'esqueceusenha',
+    loadChildren: () => import('./modal/esqueceusenha/esqueceusenha.component').then( m => m.EsqueceusenhaComponent)
   }
 ];
 
@@ -13,4 +17,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class HomePageRoutingModule {}
