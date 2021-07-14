@@ -1,0 +1,83 @@
+<ion-content>
+  <div id="container" *ngIf="comunidade">
+    <div class="welcome-container">
+      <ion-chip (click)="voltar()" color="danger" style="pointer-events: all; margin: 0;">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        <ion-label>Voltar</ion-label>
+      </ion-chip>
+      <h1 class="title">Concluído</h1>
+      <p class="subtitle">Sua comunidade <strong>{{ comunidade.nome }}</strong> acaba de ser criada! Volte a lista de comunidades para acessá-la.</p>
+    </div>
+    
+    <div style="margin-top: 200px;"></div>
+
+    <h2 style="font-size: 20px;">Dados</h2>
+
+    <ion-item style="--background: transparent;" lines="none" mode="ios">
+      <ion-label style="font-size: 15px;">Nome:</ion-label>
+      <ion-badge slot="end" color="dark">{{ comunidade.nome }}</ion-badge>
+    </ion-item>
+
+    <ion-item style="--background: transparent;" lines="none" mode="ios">
+      <ion-label style="font-size: 15px;">Assuntos:</ion-label>
+      <ion-badge slot="end" color="dark">{{ comunidade.assuntos.length > 15 ? comunidade.assuntos.substring(0, 15) + '...' : comunidade.assuntos }}</ion-badge>
+    </ion-item>
+
+    <ion-item style="--background: transparent;" lines="none" mode="ios">
+      <ion-label style="font-size: 15px;">Privacidade:</ion-label>
+      <ion-badge slot="end" color="dark">{{ comunidade.privacidade == 'private' ? 'Privada' : 'Pública' }}</ion-badge>
+    </ion-item>
+
+    <ion-item *ngIf="comunidade.descricao" style="--background: transparent;" lines="none" mode="ios">
+      <ion-label style="font-size: 15px;">Descrição:</ion-label>
+      <ion-badge slot="end" color="dark">{{ comunidade.descricao.length > 15 ? comunidade.descricao.substring(0, 15) + '...' : comunidade.descricao }}</ion-badge>
+    </ion-item>
+
+    <p class="info">Não se preocupe, você pode alterar essas informações depois.</p>
+
+    <ion-button (click)="voltar()" expand="block" color="danger" strong="true" shape="round" style="margin-top: 50px; position: relative; overflow: hidden; --padding-start: 0; --padding-end: 0;">
+      Voltar
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-button>
+
+    <div style="margin-bottom: 150px;"></div>
+  
+      <div class="steps-background"></div>
+      <div class="steps-container">
+        <div class="step done">
+          <div class="bubble">
+            <ion-icon name="checkmark-sharp" style="font-size: 22px;"></ion-icon>
+          </div>
+          <ion-label style="font-size: 13px;">Privacidade</ion-label>
+        </div>
+        <div class="step done">
+          <div class="bubble">
+            <ion-icon name="checkmark-sharp" style="font-size: 22px;"></ion-icon>
+          </div>
+          <ion-label style="font-size: 13px;">Personalizar</ion-label>
+        </div>
+        <div class="step done">
+          <div class="bubble">
+            <ion-icon name="checkmark-sharp" style="font-size: 22px;"></ion-icon>
+          </div>
+          <ion-label style="font-size: 13px;">Concluído!</ion-label>
+        </div>
+      </div>
+  </div>
+
+  <div id="container" *ngIf="!comunidade">
+    <div class="welcome-container">
+      <ion-chip color="danger" style="pointer-events: all; margin: 0;" [routerLink]="['/criarcomunidade']" routerDirection="back">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        <ion-label>Voltar</ion-label>
+      </ion-chip>
+      <h1 class="title">Erro</h1>
+      <p class="subtitle">Algo de errado aconteceu e suas informações se perderam no caminho, por favor volte ao início.</p>
+
+      <ion-button [routerLink]="['/criarcomunidade']" routerDirection="back" expand="block" color="danger" strong="true" shape="round" style="margin-top: 50px; position: relative; overflow: hidden; --padding-start: 0; --padding-end: 0;">
+        Voltar
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

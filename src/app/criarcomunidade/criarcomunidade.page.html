@@ -1,0 +1,55 @@
+<ion-content>
+  <div id="container">
+    <div class="welcome-container">
+      <ion-chip color="danger" style="pointer-events: all; margin: 0;" [routerLink]="['/comunidades']" routerDirection="back">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        <ion-label>Voltar</ion-label>
+      </ion-chip>
+      <h1 class="title">Criar comunidade</h1>
+      <p class="subtitle">Diga-nos qual o tipo da sua comunidade para prosseguirmos!</p>
+    </div>
+    
+    <div style="margin-top: 180px;"></div>
+
+    <div class="card private" (click)="openCustomizePage('private')">
+      <h2 class="card-title">Para amigos</h2>
+      <ion-chip color="warning" outline style="pointer-events: all; margin: 0;">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-label>Privada</ion-label>
+      </ion-chip>
+
+      <p class="card-desc">Se você está procurando criar uma comunidade para discutir assuntos com seus amigos, esta é a opção perfeita para você!</p>
+    </div>
+
+    <div class="card public" (click)="openCustomizePage('public')">
+      <h2 class="card-title">Para todos</h2>
+      <ion-chip color="success" outline style="pointer-events: all; margin: 0;">
+        <ion-icon name="lock-open-outline"></ion-icon>
+        <ion-label>Pública</ion-label>
+      </ion-chip>
+
+      <p class="card-desc">Se você está procurando criar uma comunidade acessível para qualquer usuário, para conversar sobre variados assuntos, esta é a opção ideal para você!</p>
+    </div>
+
+    <div class="steps-container">
+      <div class="step active">
+        <div class="bubble">
+          1
+        </div>
+        <ion-label style="font-size: 13px;">Privacidade</ion-label>
+      </div>
+      <div class="step">
+        <div class="bubble">
+          2
+        </div>
+        <ion-label style="font-size: 13px;">Personalizar</ion-label>
+      </div>
+      <div class="step">
+        <div class="bubble">
+          3
+        </div>
+        <ion-label style="font-size: 13px;">Concluído!</ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>

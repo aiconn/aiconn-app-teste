@@ -1,0 +1,180 @@
+#container {
+  background: #050B18;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#container .welcome-container {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  padding-bottom: 100px;
+  background: linear-gradient(180deg, #050b18 35%, #0d1526fc 45%, transparent 80%);
+  filter: drop-shadow(0px -10px 6px black);
+  pointer-events: none;
+}
+
+#container .title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: white;
+}
+
+#container .subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #D5D5D5;
+  margin-top: 0;
+}
+
+#container ion-input, ion-select, ion-textarea {
+    background: rgb(24 31 49 / 40%);
+    border: 1px solid #3dc2ff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 3px 10px !important;
+    color: white;
+    box-shadow: 0px 0px 35px 1px #36abe026;
+    margin-bottom: 5px!important;
+
+  input {
+    width: calc(100% - 35px);
+
+    &::placeholder {
+      color: #777777 !important;
+    }
+  }
+}
+
+ion-select {
+    --placeholder-opacity: 0.5;
+}
+
+#container .card-container {
+  background: linear-gradient(180deg, #091021 0%, rgba(9, 16, 33, 0) 100%);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25), -10px -10px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #1b1c2f;
+
+  .upload-icon-container {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    min-height: 90px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23EC3463' stroke-width='3' stroke-dasharray='50%25%2c 13%25' stroke-dashoffset='88' stroke-linecap='round'/%3e%3c/svg%3e");
+  }
+
+  .upload-text {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .required-star {
+    color: #eb445a;
+    font-weight: bold;
+  }
+
+  .input-desc {
+      font-size: 13px;
+      padding: 0 5px;
+      color: #a9a9a9;
+  }
+
+  .error-text {
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+#container .steps-background {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 100px;
+    background: linear-gradient(0deg, #050B18 2.12%, rgba(5, 11, 24, 0.928824) 45.25%, rgba(5, 11, 24, 0.73) 71.76%, rgba(6, 12, 25, 0.2) 90.11%, rgba(6, 12, 25, 0) 100%);
+    filter: drop-shadow(0px -10px 6px black);
+    pointer-events: none;
+}
+
+#container .steps-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 20px;
+  z-index: 11;
+}
+
+#container .steps-container .step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#container .steps-container .step .bubble {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  min-width: 38px;
+  min-height: 38px;
+  border: 1px solid #2a3140;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 10px #131f33;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#container .steps-container .step.done .bubble {
+  background-color: #00ad0033;
+  border-color: #00ad00;
+  box-shadow: 0px 0px 10px #39e0396e;
+}
+
+#container .steps-container .step.done ion-label {
+  color: #39e039;
+}
+
+#container .steps-container .step.active .bubble {
+  border-color: #5c82ff;
+  box-shadow: 0px 0px 10px #021d4b;
+}
+
+#container .steps-container .step.active ion-label {
+  color: #5c82ff;
+}

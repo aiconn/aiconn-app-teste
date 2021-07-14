@@ -1,0 +1,89 @@
+<ion-content>
+  <div>
+    <div id="container">
+      <div class="welcome-container">
+        <ion-chip color="danger" style="pointer-events: all; margin: 0;" [routerLink]="['/criarcomunidade']" routerDirection="back">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+          <ion-label>Voltar</ion-label>
+        </ion-chip>
+        <h1 class="title">Personalize sua comunidade</h1>
+        <p class="subtitle">Customize seu servidor do jeito que preferir, dando seu nome e um ícone a ele.</p>
+      </div>
+
+      <div style="margin-top: 180px;"></div>
+
+      <div class="card-container">
+          <div *ngIf="privacidade" class="upload-icon-container">
+            <ion-icon name="cloud-upload-outline" style="font-size: 38px;"></ion-icon>
+          </div>
+          <span *ngIf="privacidade" class="upload-text">UPLOAD</span>
+
+          <ion-item *ngIf="privacidade" style="--background: transparent;" lines="none" mode="ios">
+            <ion-label position="stacked">Nome <span class="required-star">*</span></ion-label>
+            <ion-input [(ngModel)]="nome" placeholder="Nome da comunidade" required="true"></ion-input>
+            <span class="input-desc">Informe o nome da sua comunidade.</span>
+          </ion-item>
+
+          <ion-item *ngIf="privacidade" style="--background: transparent; margin-top: 15px; --background-activated-opacity: 0;" lines="none" mode="ios">
+            <ion-label position="stacked">Assuntos <span class="required-star">*</span></ion-label>
+            <ion-select [(ngModel)]="assuntos" (ionCancel)="assuntos = null" (ionChange)="assuntos ? 
+              assuntos.length < 1 ? assuntos = null : null 
+            : null"
+            cancelText="Cancelar" placeholder="Assuntos da comunidade" multiple style="padding: 10px!important;" aria-required="required">
+              <ion-select-option *ngFor="let topic of topics" [value]="topic.name">{{ topic.name }}</ion-select-option>
+            </ion-select>
+            <span class="input-desc">Selecione assuntos relacionados a sua comunidade.</span>
+          </ion-item>
+
+          <ion-item *ngIf="privacidade" style="--background: transparent; margin-top: 15px;" lines="none" mode="ios">
+            <ion-label position="stacked">Descrição</ion-label>
+            <ion-textarea [(ngModel)]="descricao" placeholder="Descrição da comunidade"></ion-textarea>
+            <span class="input-desc">Caso queira você pode explicar sua comunidade com uma descrição.</span>
+          </ion-item>
+
+          <ion-button *ngIf="privacidade" [disabled]="!nome || !assuntos" (click)="criarComunidade()" style="margin-top: 30px; margin-bottom: 20px; position: relative; overflow: hidden; --padding-start: 0; --padding-end: 0;" color="danger" shape="round" expand="block" strong="true">
+            Criar!
+            <ion-ripple-effect></ion-ripple-effect>
+          </ion-button>
+
+
+          <div *ngIf="!privacidade" class="upload-icon-container">
+            <ion-icon name="close-circle-outline" style="font-size: 38px;"></ion-icon>
+          </div>
+          <span *ngIf="!privacidade" class="upload-text">ERRO</span>
+
+          <p *ngIf="!privacidade" class="error-text">Ops, parece que a <strong>privacidade</strong> da sua comunidade se <strong>perdeu</strong> pelo caminho, tente voltar e selecione novamente!</p>
+      
+          <ion-button *ngIf="!privacidade" [routerLink]="['/criarcomunidade']" routerDirection="back" style="margin-top: 30px; margin-bottom: 20px; position: relative; overflow: hidden; --padding-start: 0; --padding-end: 0;" color="danger" shape="round" expand="block" strong="true">
+            Voltar
+            <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
+            <ion-ripple-effect></ion-ripple-effect>
+          </ion-button>
+        </div>
+
+      <div style="margin-bottom: 150px;"></div>
+  
+      <div class="steps-background"></div>
+      <div class="steps-container">
+        <div class="step done">
+          <div class="bubble">
+            <ion-icon name="checkmark-sharp" style="font-size: 22px;"></ion-icon>
+          </div>
+          <ion-label style="font-size: 13px;">Privacidade</ion-label>
+        </div>
+        <div class="step active">
+          <div class="bubble">
+            2
+          </div>
+          <ion-label style="font-size: 13px;">Personalizar</ion-label>
+        </div>
+        <div class="step">
+          <div class="bubble">
+            3
+          </div>
+          <ion-label style="font-size: 13px;">Concluído!</ion-label>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,119 @@
+#container {
+    background: #050B18;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#container .welcome-container {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 100px;
+    background: linear-gradient(180deg, #050b18 35%, #0d1526fc 45%, transparent 80%);
+    filter: drop-shadow(0px -10px 6px black);
+    pointer-events: none;
+}
+
+#container .title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: white;
+}
+
+#container .subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #D5D5D5;
+    margin-top: 0;
+}
+
+#container .card {
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+#container .card:active {
+    transform: scale(0.98);
+    filter: grayscale(0.5);
+}
+
+#container .card:not(:last-child) { 
+    margin-bottom: 20px;
+}
+
+#container .card.private {
+    background: linear-gradient(270deg, rgb(89 196 199 / 50%) 0.46%, rgba(0, 0, 0, 0) 100%);
+    border: 1px solid #59c4c7;
+    box-shadow: 0px 0px 15px #59c4c74d;
+}
+
+#container .card.public {
+    background: linear-gradient(270deg, rgb(165 75 235 / 50%) 0.46%, rgba(0, 0, 0, 0) 100%);
+    border: 1px solid #A54BEB;
+    box-shadow: 0px 0px 15px #a54beb4d;
+}
+
+#container .card .card-title {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+#container .card .card-desc {
+    color: #D5D5D5;
+    font-size: 14px;
+}
+
+#container .steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 20px;
+    z-index: 3;
+}   
+
+#container .steps-container .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#container .steps-container .step .bubble {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    min-width: 38px;
+    min-height: 38px;
+    border: 1px solid #2a3140;
+    display: grid;
+    place-items: center;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px #131f33;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#container .steps-container .step.active .bubble {
+    border-color: #5c82ff;
+    box-shadow: 0px 0px 10px #021d4b;
+}
+
+#container .steps-container .step.active ion-label {
+    color: #5c82ff;
+}
