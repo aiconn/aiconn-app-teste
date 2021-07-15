@@ -7,42 +7,30 @@ import { Injectable } from '@angular/core';
 
 export class ComunidadesService {
 
-  constructor(private http: HttpClient) {
-    this.atualizaComunidades();
-  }
+  constructor(private http: HttpClient) { }
 
-  private comunidades;
-
-  public getComunidades() {
-    return this.comunidades;
-  }
-
-  atualizaComunidades() {
-    this.comunidades = [];
-    this.http.get<any[]>("http://localhost/api/comunidades/get.php")
-      .subscribe(dados => {
-        dados.forEach(item => {
-          this.comunidades.push(item);
-        })
-      })
-  }
-
-  public async criarComunidade(nome: String, assuntos: String, privacidade: String, descricao?: String) {
+  public async criarComunidade(nome: string, assuntos: string, privacidade: string, descricao?: string) {
+    
     this.http.get<any[]>(
       `http://localhost/api/comunidades/create.php?nome=${nome.toString()}
         &assuntos=${assuntos.toString()}
         &privacidade=${privacidade.toString()}
-        ${descricao ? `&descricao=${descricao}` : ''}`
+        ${descricao ? `&descricao=${descricao.toString()}` : ''}`
     )
-    .subscribe( () => {
-      this.atualizaComunidades();
-    })
+    .subscribe()
   }
 
-  public async deletarComunidade(id: Number) {
-    this.http.delete<any[]>("http://localhost/api/comunidades/delete.php?id=" + id)
-      .subscribe(dados => {
-        this.atualizaComunidades();
-      })
+  public async deletarComunidade(id: number): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.http.delete<any[]>("http://localhost/api/comunidades/delete.php?id=" + id)
+        .subscribe( async () => {
+          resolve();
+          console.log('resolve delete')
+        }, () => {
+          reject();
+          console.log('reject delete')
+        }
+      )
+    })
   }
 }

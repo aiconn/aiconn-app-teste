@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ComunidadesService } from '../services/comunidades.service';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ComunidadesService } from '../services/comunidades.service';
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-comunidades',
@@ -10,24 +10,52 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ComunidadesPage implements OnInit {
   
+  comunidades?: any = null;
   comunidadesService: ComunidadesService;
-  comunidades?: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private http:HttpClient) {
+  constructor(private http:HttpClient, public actionSheetController: ActionSheetController) {
     this.comunidadesService = new ComunidadesService(http);
-    this.comunidades = this.comunidadesService.getComunidades();
   }
   
   ionViewWillEnter() {
-    this.comunidades = this.comunidadesService.getComunidades();
+    this.atualizaComunidades()
     console.log('ionViewWillEnter log')
-    console.log(this.comunidadesService.getComunidades())
-    console.log(this.comunidades)
   }
 
-  debug() {
-    console.log(this.comunidadesService.getComunidades())
-    console.log(this.comunidades)
+  atualizaComunidades() {
+    this.http.get<any[]>("http://localhost/api/comunidades/get.php")
+      .subscribe(dados => {
+        this.comunidades = dados;
+        console.log(this.comunidades)
+      })
+  }
+
+  async presentActionSheet(id) {
+    const actionSheet = await this.actionSheetController.create({
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Excluir',
+        role: 'destructive',
+        icon: 'trash',
+        handler: async () => {
+          await this.deletarComunidade(id);
+        }
+      }, {
+        text: 'Cancelar',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+
+  async deletarComunidade(id: number) {
+    await this.comunidadesService.deletarComunidade(id).then(() => {
+      this.atualizaComunidades();
+    })
   }
 
   ngOnInit() {

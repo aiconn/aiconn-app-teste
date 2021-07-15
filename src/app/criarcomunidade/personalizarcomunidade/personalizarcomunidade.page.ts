@@ -11,18 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class PersonalizarcomunidadePage implements OnInit {
 
   privacidade: any;
-
   comunidadesService: ComunidadesService;
-
-  constructor(private route: ActivatedRoute, private router: Router, private http:HttpClient) {
-    this.route.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state) {
-        this.privacidade = this.router.getCurrentNavigation().extras.state.privacidade;
-      }
-    });
-    this.comunidadesService = new ComunidadesService(http);
-  }
-
   topics:any = [
     { name:'Jogos', slug: 'jogos' },
     { name:'Animes', slug: 'animes' },
@@ -32,10 +21,18 @@ export class PersonalizarcomunidadePage implements OnInit {
     { name:'Programação', slug: 'programacao' },
     { name:'Quadrinhos', slug: 'quadrinhos' }
   ];
+  nome?: string = null;
+  assuntos?: string = null;
+  descricao?: string = null;
 
-  nome?: String = null;
-  assuntos?: String = null;
-  descricao?: String = null;
+  constructor(private route: ActivatedRoute, private router: Router, private http:HttpClient) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.privacidade = this.router.getCurrentNavigation().extras.state.privacidade;
+      }
+    });
+    this.comunidadesService = new ComunidadesService(http);
+  }
 
   async criarComunidade() {
     let navigationExtras: NavigationExtras = {

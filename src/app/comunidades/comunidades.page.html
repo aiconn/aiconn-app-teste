@@ -1,13 +1,14 @@
 <ion-content fullscreen>
   <div id="container" *ngIf="comunidades">
     <div class="welcome-container">
-      <h1 class="title" (click)="debug()">Comunidades</h1>
+      <h1 class="title">Comunidades</h1>
       <p class="subtitle">Acesse aqui alguma comunidade que você faz parte.</p>
     </div>
 
     <div style="margin-top: 130px;"></div>
 
-    <div class="community-card" *ngFor="let comunidade of comunidades">
+    <!-- right click = (contextmenu) -->
+    <div class="community-card" *ngFor="let comunidade of comunidades" (click)="presentActionSheet(comunidade.id)">
       <ion-thumbnail slot="start" style="margin-right: 10px;">
         <img style="filter: hue-rotate(330deg);" class="community-img" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
       </ion-thumbnail>
@@ -18,7 +19,7 @@
       </ion-label>
     </div>
 
-    <!-- <div *ngIf="comunidades && comunidades.length < 1" class="community-card">
+    <div *ngIf="comunidades && comunidades.length < 1" class="community-card">
       <ion-label>
         <h2 style="margin-bottom: 5px; font-size: 20px;">Ops!</h2>
         <p>Parece que você não participa de nenhuma comunidade ainda.</p>
@@ -42,9 +43,7 @@
           </p>
         </ion-label>
       </ion-item>
-    </div> -->
-
-
+    </div>
 
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/criarcomunidade']">
